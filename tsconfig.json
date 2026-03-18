@@ -1,0 +1,7 @@
+{
+  "extends": "@electron-toolkit/tsconfig/tsconfig.json",
+  "include": [
+    "electron.vite.config.ts",
+    "vitest.config.ts"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "name": "teif-pilot",
+  "version": "1.0.0",
+  "description": "TEIF Electronic Invoicing Platform Pilot",
+  "main": "./out/main/index.js",
+  "author": "Antigravity",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "typecheck:node": "tsc --noEmit -p tsconfig.node.json",
+    "typecheck:web": "tsc --noEmit -p tsconfig.web.json",
+    "typecheck": "pnpm run typecheck:node && pnpm run typecheck:web",
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "build": "pnpm run typecheck && electron-vite build",
+    "postinstall": "electron-builder install-app-deps",
+    "build:win": "pnpm run build && electron-builder --win --config",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@electron-toolkit/utils": "^3.0.0",
+    "bcryptjs": "^2.4.3",
+    "better-sqlite3": "^11.5.0",
+    "electron-store": "^10.0.0",
+    "pdfkit": "^0.15.0",
+    "qrcode": "^1.5.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "xmlbuilder2": "^3.1.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@electron-toolkit/eslint-config-prettier": "^2.0.0",
+    "@electron-toolkit/eslint-config-ts": "^2.0.0",
+    "@electron-toolkit/tsconfig": "^1.0.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/better-sqlite3": "^7.6.11",
+    "@types/node": "^20.14.8",
+    "@types/pdfkit": "^0.13.5",
+    "@types/qrcode": "^1.5.5",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "electron": "31.0.2",
+    "electron-builder": "^24.13.3",
+    "electron-vite": "^2.3.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
+    "vite": "^5.3.1",
+    "vitest": "^2.1.2"
+  }
+}
